@@ -49,6 +49,7 @@ export default function createListComponent({ getItemOffset, getEstimatedTotalSi
                     const { itemSize } = this.props;
                     const itemStyleCache = this._getItemStyleCache(shouldResetStyleCacheOnItemSizeChange && itemSize);
                     let style;
+                    // eslint-disable-next-line no-prototype-builtins
                     if (itemStyleCache.hasOwnProperty(index)) {
                         style = itemStyleCache[index];
                     }
@@ -90,6 +91,7 @@ export default function createListComponent({ getItemOffset, getEstimatedTotalSi
                     this._outerRef = ref;
                     if (typeof outerRef === 'function') {
                         outerRef(ref);
+                        // eslint-disable-next-line no-prototype-builtins
                     }
                     else if (outerRef != null && typeof outerRef === 'object' && outerRef.hasOwnProperty('current')) {
                         outerRef.current = ref;

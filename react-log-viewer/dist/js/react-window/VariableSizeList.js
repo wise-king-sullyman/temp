@@ -1,8 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VariableSizeList = void 0;
-const tslib_1 = require("tslib");
-const createListComponent_1 = tslib_1.__importDefault(require("./createListComponent"));
+const createListComponent_1 = __importDefault(require("./createListComponent"));
 const DEFAULT_ESTIMATED_ITEM_SIZE = 50;
 const getItemMetadata = (props, index, instanceProps) => {
     const { itemSize } = props;

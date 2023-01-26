@@ -361,6 +361,7 @@ export default function createListComponent({
       const itemStyleCache = this._getItemStyleCache(shouldResetStyleCacheOnItemSizeChange && itemSize);
 
       let style;
+      // eslint-disable-next-line no-prototype-builtins
       if (itemStyleCache.hasOwnProperty(index)) {
         style = itemStyleCache[index];
       } else {
@@ -435,6 +436,7 @@ export default function createListComponent({
 
       if (typeof outerRef === 'function') {
         outerRef(ref);
+      // eslint-disable-next-line no-prototype-builtins
       } else if (outerRef != null && typeof outerRef === 'object' && outerRef.hasOwnProperty('current')) {
         outerRef.current = ref;
       }

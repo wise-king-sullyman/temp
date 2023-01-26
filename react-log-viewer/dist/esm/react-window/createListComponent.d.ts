@@ -85,10 +85,12 @@ export default function createListComponent({ getItemOffset, getEstimatedTotalSi
         _outerRefSetter: (ref: any) => void;
         _resetIsScrollingDebounced: () => void;
         _resetIsScrolling: () => void;
-        context: unknown;
+        context: any;
         setState<K extends keyof State>(state: State | ((prevState: Readonly<State>, props: Readonly<ListProps>) => State | Pick<State, K>) | Pick<State, K>, callback?: () => void): void;
         forceUpdate(callback?: () => void): void;
-        readonly props: Readonly<ListProps>;
+        readonly props: Readonly<ListProps> & Readonly<{
+            children?: import("react").ReactNode;
+        }>;
         refs: {
             [key: string]: import("react").ReactInstance;
         };

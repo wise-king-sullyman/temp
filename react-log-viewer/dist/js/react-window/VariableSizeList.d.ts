@@ -33,10 +33,12 @@ export declare const VariableSizeList: {
         _outerRefSetter: (ref: any) => void;
         _resetIsScrollingDebounced: () => void;
         _resetIsScrolling: () => void;
-        context: unknown;
+        context: any;
         setState<K extends keyof import("./createListComponent").State>(state: import("./createListComponent").State | ((prevState: Readonly<import("./createListComponent").State>, props: Readonly<ListProps>) => import("./createListComponent").State | Pick<import("./createListComponent").State, K>) | Pick<import("./createListComponent").State, K>, callback?: () => void): void;
         forceUpdate(callback?: () => void): void;
-        readonly props: Readonly<ListProps>;
+        readonly props: Readonly<ListProps> & Readonly<{
+            children?: import("react").ReactNode;
+        }>;
         refs: {
             [key: string]: import("react").ReactInstance;
         };

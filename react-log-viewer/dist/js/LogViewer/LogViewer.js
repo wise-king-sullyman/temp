@@ -1,15 +1,51 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LogViewer = void 0;
-const tslib_1 = require("tslib");
-const react_1 = tslib_1.__importStar(require("react"));
+const react_1 = __importStar(require("react"));
 const LogViewerContext_1 = require("./LogViewerContext");
 const react_styles_1 = require("@patternfly/react-styles");
 const LogViewerRow_1 = require("./LogViewerRow");
 const utils_1 = require("./utils/utils");
 const react_window_1 = require("../react-window");
-const log_viewer_1 = tslib_1.__importDefault(require("@patternfly/react-styles/css/components/LogViewer/log-viewer"));
-const ansi_up_1 = tslib_1.__importDefault(require("../ansi_up/ansi_up"));
+const log_viewer_1 = __importDefault(require("@patternfly/react-styles/css/components/LogViewer/log-viewer"));
+const ansi_up_1 = __importDefault(require("../ansi_up/ansi_up"));
 let canvas;
 const getCharNums = (windowWidth, font) => {
     // if given, use cached canvas for better performance
@@ -21,7 +57,7 @@ const getCharNums = (windowWidth, font) => {
     return Math.floor(windowWidth / oneChar.width);
 };
 const LogViewerBase = (0, react_1.memo)((_a) => {
-    var { data = '', hasLineNumbers = true, height = 600, overScanCount = 10, loadingContent = '', toolbar, width, theme = 'light', scrollToRow = 0, itemCount = undefined, header, footer, onScroll, innerRef, isTextWrapped = true, initialIndexWidth } = _a, props = tslib_1.__rest(_a, ["data", "hasLineNumbers", "height", "overScanCount", "loadingContent", "toolbar", "width", "theme", "scrollToRow", "itemCount", "header", "footer", "onScroll", "innerRef", "isTextWrapped", "initialIndexWidth"]);
+    var { data = '', hasLineNumbers = true, height = 600, overScanCount = 10, loadingContent = '', toolbar, width, theme = 'light', scrollToRow = 0, itemCount = undefined, header, footer, onScroll, innerRef, isTextWrapped = true, initialIndexWidth } = _a, props = __rest(_a, ["data", "hasLineNumbers", "height", "overScanCount", "loadingContent", "toolbar", "width", "theme", "scrollToRow", "itemCount", "header", "footer", "onScroll", "innerRef", "isTextWrapped", "initialIndexWidth"]);
     const [searchedInput, setSearchedInput] = (0, react_1.useState)('');
     const [rowInFocus, setRowInFocus] = (0, react_1.useState)({ rowIndex: scrollToRow, matchIndex: 0 });
     const [searchedWordIndexes, setSearchedWordIndexes] = (0, react_1.useState)([]);
