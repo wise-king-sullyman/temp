@@ -1,9 +1,7 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const memoize_one_1 = __importDefault(require("memoize-one"));
+const tslib_1 = require("tslib");
+const memoize_one_1 = tslib_1.__importDefault(require("memoize-one"));
 const react_1 = require("react");
 const timer_1 = require("./timer");
 const IS_SCROLLING_DEBOUNCE_INTERVAL = 150;
